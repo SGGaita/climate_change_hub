@@ -1,7 +1,8 @@
+import { Box } from '@mui/material'
 import React from 'react'
 
 export const HeroComponent = () => {
   return (
-    <div>HeroComponent</div>
+    <Box display="flex" minHeight="500px">HeroComponent</Box>
   )
 }
