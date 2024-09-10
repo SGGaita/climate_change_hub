@@ -1,0 +1,38 @@
+:root {
+    --primary-font: Roboto, Open Sans, Inter;
+    --secondary-font: Georgia, Merriweather, Lora;
+
+    --header-background:#f3eadd;
+  
+    --h1-font-size: 48px;
+    --h2-font-size: 36px;
+    --h3-font-size: 28px;
+    --h4-font-size: 24px;
+    --h5-font-size: 20px;
+    --h6-font-size: 18px;
+    --body-font-size: 16px;
+    --link-font-size: 20px;
+    --button-font-size: 18px;
+  
+    --heading-font-weight: 700;
+    --body-font-weight: 400;
+    --link-font-weight: 600;
+    --button-font-weight: 700;
+  
+    --global-padding: 20px;
+    --container-padding: 80px;
+    --header-padding: 10px;
+    --footer-padding: 50px;
+    --content-padding: 30px;
+    --heading-margin-bottom: 20px;
+    --paragraph-margin-bottom: 15px;
+  
+    --nav-menu-item-padding: 10px 20px;
+    --nav-menu-item-spacing: 15px;
+  }
+
+body{
+    margin:0;
+    box-sizing: border-box;
+    flex-wrap: wrap !important; /* Allows items to wrap if necessary */
+}

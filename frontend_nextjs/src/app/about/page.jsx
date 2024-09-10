@@ -1,9 +1,10 @@
 import React from 'react'
 
-const About = () => {
+const AboutTheHub = () => {
   return (
     <div> About The Climate Hub</div>
   )
 }
 
-export default About
+export default AboutTheHub
+

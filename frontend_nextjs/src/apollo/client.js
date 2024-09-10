@@ -1,12 +1,9 @@
 "use client";
-
-import { createHttpLink, ApolloProvider, gql } from '@apollo/client';
+import { createHttpLink } from '@apollo/client';
 import { ApolloClient, ApolloNextAppProvider, InMemoryCache, } from '@apollo/experimental-nextjs-app-support';
 
 
-
-
-const makeClient = () => {
+export const client = () => {
   //configuration for different GraphQL operation types
   const defaultOptions = {
     //queries that need to stay up-to-date with real-time server changes.
@@ -22,7 +19,7 @@ const makeClient = () => {
     }
   }
 
-  //Apollo Client won't store query results in memory by default
+  //   //Apollo Client won't store query results in memory by default
   const cache = new InMemoryCache({
     resultCaching: false,
   })
@@ -32,25 +29,23 @@ const makeClient = () => {
     uri: `${process.env.NEXT_PUBLIC_WORDPRESS_SITE_URL}/graphql`,
   })
 
-  console.warn("URL", process.env.NEXT_PUBLIC_WORDPRESS_SITE_URL)
+  console.warn("URL", `${process.env.NEXT_PUBLIC_WORDPRESS_SITE_URL}/graphql`)
 
   return new ApolloClient({
     link,
     cache,
     defaultOptions
   });
-
-
 }
 
 
-// you need to create a component to wrap your app in
-const ApolloWrapper =({ children }) =>{
+const ApolloWrapper = ({ children }) => {
   return (
-    <ApolloNextAppProvider makeClient={makeClient}>
+    <ApolloNextAppProvider makeClient={client}>
       {children}
     </ApolloNextAppProvider>
   );
 }
 
-export default ApolloWrapper;
+
+export default ApolloWrapper

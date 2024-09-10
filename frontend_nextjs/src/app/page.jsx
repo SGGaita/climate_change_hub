@@ -1,9 +1,16 @@
-//import React from 'react'
+import Navbar from "@/components/Navbar/Navbar"
 
-const Home = () => {
+const Home = async () => {
+
   return (
-    <div><h1>Home Page</h1></div>
+    <>
+      
+    </>
   )
 }
 
 export default Home
+
+
+
+
