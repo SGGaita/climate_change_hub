@@ -1,16 +1,17 @@
 'use client'
-import React from 'react'
+import React, { useState } from 'react'
 import LanguageSelector from '../Language/LanguageSelector'
 import "./NavbarElements.scss"
 import { GET_NAVBAR_DATA } from '@/queries/get-navbar-data';
 import { useQuery } from '@apollo/client';
 import Link from 'next/link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars } from '@fortawesome/free-solid-svg-icons';
+import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
 
 
 
 const Navbar = () => {
+    const [clicked, setClicked] = useState(false)
 
     const { loading, error, data } = useQuery(GET_NAVBAR_DATA);
 
@@ -22,6 +23,13 @@ const Navbar = () => {
     const logoUrl = data?.logo?.siteLogoUrl
     const logoTitle = data?.logo?.siteTitle
 
+
+
+    //handle click function
+    const handleClick = ()=>{
+        setClicked(!clicked)
+    }
+
     return (
         <>
             <nav>
@@ -30,7 +38,7 @@ const Navbar = () => {
                 </Link>
 
                 <div>
-                    <ul id="navbar">
+                    <ul id="navbar" className={clicked ? "#navbar active" : "navbar"}>
                         {headerMenus.map((menu) => (
                             <li key={menu.id}>
                                 <Link className="menu-item" href={menu.url} >
@@ -42,8 +50,9 @@ const Navbar = () => {
                 </div>
 
                 {/* mobile menu */}
-                <div id="mobile">
-                <FontAwesomeIcon icon={faBars} size="2x" />
+                <div id="mobile" onClick={handleClick}>
+                <FontAwesomeIcon className='icon' icon={clicked ? faTimes : faBars} size="2x" />
+                
                 </div>
             </nav>
         </>

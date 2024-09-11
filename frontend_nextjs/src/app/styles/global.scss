@@ -31,8 +31,9 @@
     --nav-menu-item-spacing: 15px;
   }
 
-body{
+*{
     margin:0;
+    padding: 0;
     box-sizing: border-box;
     flex-wrap: wrap !important; /* Allows items to wrap if necessary */
 }
