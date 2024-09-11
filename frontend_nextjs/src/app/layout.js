@@ -1,7 +1,9 @@
+import "@fortawesome/fontawesome-svg-core/styles.css"
+import {config} from "@fortawesome/fontawesome-svg-core"
 import ApolloWrapper from "@/apollo/client"
 import './styles/global.scss'
 import Navbar from "@/components/Navbar/Navbar"
-
+config.autoAddCss = false;
 
 export const metadata = {
   title: 'Climate Change Hub',
