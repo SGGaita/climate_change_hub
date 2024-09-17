@@ -7,6 +7,7 @@ nav {
     -moz-box-shadow: 0px 9px 5px -10px rgba(0, 0, 0, 0.75);
     box-shadow: 0px 9px 5px -10px rgba(0, 0, 0, 0.75);
 
+
     #logo-link {
 
         .logo {
@@ -90,9 +91,11 @@ nav {
             box-shadow: 0px 5px 40px rgba(0, 0, 0, 0.55) !important;
             padding: 40px 10px;
             transition: 0.6s ease-in-out;
+            z-index:100;
 
             &.active{
                 right: -400px;
+                height: 0vh;
             }
 
             li {

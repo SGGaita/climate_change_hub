@@ -2,20 +2,15 @@
 import React, { useState } from 'react'
 import LanguageSelector from '../Language/LanguageSelector'
 import "./NavbarElements.scss"
-import { GET_NAVBAR_DATA } from '@/queries/get-navbar-data';
-import { useQuery } from '@apollo/client';
 import Link from 'next/link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
 
 
 
-const Navbar = () => {
+const Navbar = ({ data, error }) => {
     const [clicked, setClicked] = useState(false)
 
-    const { loading, error, data } = useQuery(GET_NAVBAR_DATA);
-
-    console.log("Data", data?.logo?.siteLogoUrl)
 
     if (error) return <p>Error: {error.message}</p>;
 
@@ -23,16 +18,14 @@ const Navbar = () => {
     const logoUrl = data?.logo?.siteLogoUrl
     const logoTitle = data?.logo?.siteTitle
 
-
-
     //handle click function
-    const handleClick = ()=>{
+    const handleClick = () => {
         setClicked(!clicked)
     }
 
     return (
         <>
-            <nav>
+            {data ? <nav>
                 <Link id="logo-link" href="/">
                     <img src={logoUrl} alt={logoTitle} className='logo' />
                 </Link>
@@ -51,10 +44,11 @@ const Navbar = () => {
 
                 {/* mobile menu */}
                 <div id="mobile" onClick={handleClick}>
-                <FontAwesomeIcon className='icon' icon={clicked ? faTimes : faBars} size="2x" />
-                
+                    <FontAwesomeIcon className='icon' icon={clicked ? faTimes : faBars} size="2x" />
+
                 </div>
             </nav>
+                : <>Loading... </>}
         </>
     )
 }

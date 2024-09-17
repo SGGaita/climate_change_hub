@@ -1,0 +1,45 @@
+.hero-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: 0;
+    width: 100%;
+    height: 80vh;
+    padding: 0;
+    margin: 0;
+
+
+    .center-text {
+        display: flex !important;
+        width: 100%;
+        height: 100%;
+        flex-direction: column;
+        align-items: center !important;
+        justify-content: center !important;
+        position: absolute;
+        color:#fff;
+        background: rgba(0, 0, 0, .3);
+
+        .preheader {
+            display: inline-block;
+            margin-bottom: .5rem;
+            border: 0;
+            font-weight: 400;
+            font-size: 1.6rem;
+            letter-spacing: .05em;
+            align-self: inherit;
+            color:#fff;
+            font-family:'source sans 3',calibri,sans-serif;
+        }
+        h1{
+            font-weight: 900;
+    font-size: 2.2rem;
+    font-family: 'source sans 3', calibri, sans-serif;
+    line-height: 1.1;
+    padding: 0;
+    margin: 0 0 .5em;
+        }
+    }
+
+}
