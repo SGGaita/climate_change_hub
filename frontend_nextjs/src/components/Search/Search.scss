@@ -1,0 +1,23 @@
+.search-container{
+    display:flex;
+    width:150px;
+    margin: 0 1rem 0 0;
+
+    .search-input{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        width:100%;
+        border: solid #e2e0e0 1px;
+        padding:0.5rem;
+        border-radius: 1rem;
+        cursor: pointer;
+        transition: 0.3s ease-in-out;
+
+        &:hover{
+            color: #4d4d4d;
+            border: solid #e2e0e0 1px;
+        }
+    }
+}
